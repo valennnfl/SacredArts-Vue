@@ -1,1 +1,425 @@
 @import "bootstrap/scss/bootstrap";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "arno-pro", serif!important;
+    font-size: 0.9em;
+    background-color: black;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+:root{
+    --texto: rgba(255, 255, 255, 0.75);
+    --gris-oscuro: #0F1011;
+    --azul: #0059FF;
+    --azul-oscuro: #0019a7;
+    --verde-claro: #A8FFAB;
+    --verde: #00be6f;
+    --dorado: #D4A64A;
+}
+::selection{
+    background-color: #ffffff54;
+}
+html {
+    scrollbar-width: thin;
+    scrollbar-color: white black;
+}
+
+h2, h3, h4, h5, h6, p, a, li{
+    font-family: "arno-pro", serif!important;
+}
+p, a{
+    color: var(--texto);
+    font-size: 1.3em!important;
+}
+.detalle li{
+  color: var(--texto);
+  font-size: 18px;
+  color: #FFFFFF;
+}
+body h2{
+    color: white;
+    font-size: 2.8em;
+    justify-self: center;
+    text-align: center;
+    margin-bottom: 0.7em;
+    font-size: 3em;
+}
+body h3{
+    color: white;
+    font-size: 1.4em;
+}
+#section-nosotros > div, #section-juegos > div, #section-queofrecemos, #section-productos > div, #section-contactanos, footer{
+    justify-self: center;
+    padding-top: 10em;
+    scroll-behavior: smooth;
+}
+.introduction p{
+    text-align: center;
+    margin-bottom: 4em;
+    max-width: 900px;
+    justify-self: center;
+}
+.separador{
+    height: 1px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.219);
+    margin: 1.4em 0;
+}
+body .all-caps{
+    text-transform: uppercase;
+}
+
+/* nav */
+nav.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+nav.bg-body-tertiary {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+nav .container-fluid{
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+#navbarNav a{
+    color: var(--dorado);
+}
+#navbarNav a:hover{
+    color: var(--texto);
+}
+.navbar-toggler-icon{
+    filter: invert(1);
+}
+.navbar-toggler{
+    border: none;
+}
+.navbar-toggler:focus{
+    box-shadow: none;
+}
+nav h1 {
+    font-size: 0;
+    position: relative;
+    width: 300px;
+    height: 75px;
+    background-image: url(./img/sacred-arts.png);
+    background-repeat: no-repeat;
+    background-size: 95%;
+    background-position: center;
+    margin: 0;
+}
+.dropdown-menu{
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+}
+.dropdown-menu a:hover, .dropdown-item:focus{
+    background-color: transparent;
+}
+nav .btn-primary{
+    --bs-btn-bg: transparent;
+    --bs-btn-hover-bg: transparent;
+    --bs-btn-active-bg: transparent;
+    --bs-btn-disabled-bg: transparent;
+    border: none;
+}
+.dropdown-menu, .nav-link{
+    font-size: 1.1em;
+}
+
+/* inicio */
+#section-inicio{
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#section-inicio::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+    linear-gradient(
+      to bottom,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0, 0, 0, 0.8) 100%
+    ),
+    url('./img/eldenring-bg.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.5;
+    z-index: -1;
+}
+#section-inicio p{
+    text-align: center;
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+/* encantamientos */
+#sec-encan, #sec-detalle{
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 6em;
+    width: 100vw;
+}
+#sec-encan > div {
+    position: relative;
+    z-index: 1;
+}
+#encantamientos{
+    margin-top: 4em;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5em;
+}
+#encantamientos article{
+    background-color: #000000;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    border-color: var(--dorado);
+    border-radius: 0;
+}
+#encantamientos article img:hover{
+  transition: 0.3s;
+  opacity: 70%;
+}
+#encantamientos article .card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    gap: 0.2em;
+    padding: 0;
+}
+#encantamientos article .btn{
+    background-color: var(--dorado);
+    color: #332200;
+    border: none;
+    border-radius: 0;
+    transition: 0.2s;
+    padding: 0;
+}
+#encantamientos article .btn:hover{
+    background-color: #9f7b33;
+}
+
+
+/* paginación */
+
+.pagination li{
+    background-color: #000000!important;
+}
+/* Color normal */
+.paginacion-custom .page-link {
+    color: var(--dorado);
+    background-color: #000000;
+    border-color: #000000;
+}
+/* Hover */
+.paginacion-custom .page-link:hover {
+    color: #fff;
+    background-color: #000000;
+    border-color: var(--dorado);
+}
+/* Página activa */
+.paginacion-custom .page-item.active .page-link {
+    color: #fff;
+    background-color: #000000;
+    border-color: var(--dorado);
+}
+/* Paginación deshabilitada */
+.paginacion-custom .page-item.disabled .page-link {
+    color: #adb5bd;
+    background-color: #000000;
+    border-color: #000000;
+}
+/* Quitar sombra al hacer focus */
+.paginacion-custom .page-link:focus {
+    box-shadow: 0 0 0 0.2rem rgba(240, 175, 52, 0.25);
+}
+
+/* detalle */
+#sec-detalle{
+  padding-top: 170px;
+  align-content: center;
+
+  position: relative;
+  min-height: 100vh;
+  padding: 2.5rem 1.5rem;
+  border-radius: 12px;
+
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.679)),
+    url('../img/det-bg.webp');
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+.detalle{
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 3em;
+}
+.detalle h2{
+  text-align: left;
+  font-size: 3.8em;
+  margin: 0;
+}
+.detalle h3{
+  color: #ffffff91;
+  margin-bottom: 1.5em;
+}
+.detalle img{
+  width: 100%;
+}
+
+.elden-stats {
+  max-width: 420px;
+  margin: 1rem 0 0;
+  padding: 0;
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1.5rem;
+    padding: 0.45rem 0.25rem;
+    border-bottom: 1px solid rgba(196, 175, 130, 0.22);
+  }
+  .stat-label {
+    color: #d6cbb5;
+    font-weight: 500;
+  }
+  .stat-value {
+    color: #f4efe6;
+    font-weight: 600;
+    text-align: right;
+    font-variant-numeric: tabular-nums; 
+  }
+  .stat-zero {
+    opacity: 0.55;
+  }
+}
+
+/* footer */
+footer{
+    background-color: var(--gris-oscuro);
+    width: 100%;
+    padding: 7em 0;
+}
+#footer-content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 3em;
+}
+#footer-content div{
+    justify-items: left;
+}
+footer a{
+    color: var(--texto);
+}
+footer a:active{
+    color: white;
+}
+footer div div:last-child a img{
+    height: 30px;
+}
+footer div h3{
+    text-align: left;
+    justify-self: left;
+    font-size: 2em;
+}
+footer .footer-nav{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+
+
+
+/* BREAKPOINTS */
+@media (max-width: 991px){
+    .img-eldenring, .img-bloodborne, .img-ds, .img-ds3{
+        object-position: center;
+    }
+    #encantamientos{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    body h2{
+        font-size: 2.3em;
+    }
+    p, a, input, textarea, form ::placeholder, label{
+        font-size: 0.9em;
+    }
+
+    #encantamientos{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 430px){
+    nav h1{
+        width: 160px!important;
+    }
+    h2{
+        font-size: 1.7em!important;
+    }
+    h3{
+        font-size: 1.4em!important;
+    }
+    p, a, label, input, #mensaje textarea::placeholder, form::placeholder, .form-control{
+        font-size: 1em!important;
+    }
+    
+    .dropdown-menu a, .nav-link{
+        font-size: 1em!important;
+    }
+
+    #encantamientos{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #encantamientos article{
+        padding: 0;
+    }
+    #encantamientos article h5{
+        font-size: 1em;
+    }
+
+    /* footer */
+    footer p, footer a{
+        font-size: 0.9em!important;
+    }
+
+}
