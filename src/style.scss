@@ -94,8 +94,13 @@ nav .container-fluid{
     max-width: 1500px;
     margin: 0 auto;
 }
+#navbarNav ul{
+  gap: 1em;
+  text-align: right;
+}
 #navbarNav a{
     color: var(--dorado);
+    text-transform: uppercase;
 }
 #navbarNav a:hover{
     color: var(--texto);
@@ -143,7 +148,7 @@ nav .btn-primary{
     position: relative;
     overflow: hidden;
     padding-top: 80px;
-    height: 60vh;
+    height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -155,8 +160,8 @@ nav .btn-primary{
     background-image: 
     linear-gradient(
       to bottom,
-    rgba(0, 0, 0, 0) 50%,
-    rgba(0, 0, 0, 0.8) 100%
+    rgba(0, 0, 0, 0) 80%,
+    rgb(0, 0, 0) 100%
     ),
     url('/img/eldenring-bg.webp');
     background-repeat: no-repeat;
@@ -165,10 +170,31 @@ nav .btn-primary{
     opacity: 0.5;
     z-index: -1;
 }
+#section-inicio h2{
+  font-size: 4em;
+}
 #section-inicio p{
     text-align: center;
     margin: 0 auto;
     max-width: 900px;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#section-inicio h2,
+#section-inicio p {
+  opacity: 0;
+  animation: fadeInUp 0.7s ease-out forwards;
+}
+#section-inicio p {
+  animation-delay: 0.18s;
 }
 
 /*busqueda*/
@@ -201,14 +227,14 @@ nav .btn-primary{
     z-index: 1;
 }
 #encantamientos, #e-guardados{
-    margin-top: 1em;
     justify-content: center;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 0.5em;
+    margin: 1em auto 0;
 }
 #encantamientos article, #e-guardados article{
-    background-color: #000000;
+    background-color: #17100c;
     color: #FFFFFF;
     display: flex;
     flex-direction: column;
@@ -216,9 +242,12 @@ nav .btn-primary{
     border-color: var(--dorado);
     border-radius: 0;
 }
-#encantamientos article img:hover, #e-guardados article img:hover{
+#encantamientos article img, #e-guardados article img{
+  transform: scale(0.95);
   transition: 0.3s;
-  opacity: 70%;
+}
+#encantamientos article img:hover, #e-guardados article img:hover{
+  transform: scale(1);
 }
 #encantamientos article .card-body, #e-guardados article .card-body{
     display: flex;
@@ -242,21 +271,17 @@ nav .btn-primary{
 }
 #encantamientos article h5, #e-guardados article h5{
   padding: 0 0.5em;
+  margin: 0.5em 0 0 0;
 }
 .btn-quitar {
-  background-color: #8b1e1e!important;
+  background-color: #3c2a0e!important;
   border: none!important;
-  color: #fff!important;
+  color: var(--texto)!important;
 }
 .btn-quitar:hover {
-  background-color: #a62626!important;
+  background-color: #9f7b33!important;
   border: none!important;
   color: #fff!important;
-}
-.btn-guardado{
-  background-color: #906d25!important;
-  border: none!important;
-  color: #080400!important;
 }
 
 /* paginación */
@@ -477,6 +502,9 @@ footer .footer-nav{
     body h2{
         font-size: 2.3em;
     }
+    h2{
+        font-size: 2.7em!important;
+    }
     p, a, input, textarea, form ::placeholder, label{
         font-size: 0.9em;
     }
@@ -485,6 +513,10 @@ footer .footer-nav{
         grid-template-columns: repeat(3, 1fr);
     }
 
+
+    #sec-detalle{
+      padding-top: 110px;
+    }
     .detalle{
       display: flex;
       flex-direction: column;
@@ -503,9 +535,6 @@ footer .footer-nav{
     nav h1{
         width: 160px!important;
     }
-    h2{
-        font-size: 2.7em!important;
-    }
     h3{
         font-size: 1.4em!important;
     }
@@ -518,7 +547,7 @@ footer .footer-nav{
     }
 
     #encantamientos, #e-guardados{
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
     #encantamientos article, #e-guardados article{
         padding: 0;

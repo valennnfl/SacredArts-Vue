@@ -2,6 +2,7 @@
 import { ref, computed, onMounted, onUnmounted, watch } from "vue"
 import { useRoute, useRouter } from "vue-router"
 import { useGuardados } from "@/components/useGuardados"
+import Recomendador from "@/components/Recomendador.vue"
 
 const route = useRoute()
 const router = useRouter()
@@ -12,6 +13,7 @@ const busqueda = ref(route.query.buscar || "")
 const categoriaSeleccionada = ref(route.query.categoria || "Todos")
 const pagina = ref(Number(route.query.pagina) || 1)
 const cargando = ref(false)
+const cargaInicialCompleta = ref(false)
 const error = ref(null)
 const { estaGuardado, alternar } = useGuardados()
 const categorias = [
@@ -113,6 +115,7 @@ async function cargar() {
 
   } finally {
     cargando.value = false
+    cargaInicialCompleta.value = true
   }
 }
 
@@ -176,7 +179,7 @@ onMounted(cargar)
       <!-- encantamientos -->
       <div
         id="encantamientos"
-        class="row g-3"
+        class="container-sm row g-3"
         :class="{ 'opacity-50': cargando }"
       >
 
@@ -197,7 +200,7 @@ onMounted(cargar)
 
             <button
               class="btn"
-              :class="estaGuardado(e.id) ? 'btn-guardado' : 'btn-primary'"
+              :class="estaGuardado(e.id) ? 'btn-quitar' : 'btn-primary'"
               @click.stop="alternar(e)"
             >
               {{ estaGuardado(e.id) ? "Guardado" : "Guardar" }}
@@ -250,6 +253,11 @@ onMounted(cargar)
 
       </ul>
     </nav>
+
+    <Recomendador
+      :encantamientos="encantamientos"
+      :carga-inicial-completa="cargaInicialCompleta"
+    />
 
   </section>
 </template>

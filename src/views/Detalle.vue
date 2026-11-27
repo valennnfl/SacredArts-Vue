@@ -108,7 +108,7 @@ watch(() => route.params.id, (nuevoId) => {
         :class="estaGuardado(e.id) ? 'btn-quitar' : 'btn-primary'"
         @click="alternar(e)"
       >
-        {{ estaGuardado(e.id) ? "Quitar de guardados" : "Guardar" }}
+        {{ estaGuardado(e.id) ? "Guardado" : "Guardar" }}
       </button>
 
       </div>

@@ -1,6 +1,6 @@
 # Sacred Arts – Encantamientos de Elden Ring
 
-## Integrante
+## Alumna
 - Valentina Flores
 
 ## Tema elegido
@@ -90,6 +90,7 @@ Opción de IA elegida:
 ### Versión de escritorio
 
 ![Captura del inicio](img/capturas/ss-inicio.png)
+![Captura de la IA](img/capturas/ss-ia.png)
 ![Captura del detalle](img/capturas/ss-detalle.png)
 ![Captura de guardados](img/capturas/ss-guardados.png)
 ![Captura del 404](img/capturas/ss-404.png)
@@ -97,5 +98,7 @@ Opción de IA elegida:
 ### Versión móvil
 
 ![Captura del inicio](img/capturas/ss-m-inicio.png)
+![Captura de la IA](img/capturas/ss-m-ia.png)
 ![Captura del detalle](img/capturas/ss-m-detalle.png)
 ![Captura de guardados](img/capturas/ss-m-guardados.png)
+![Captura del 404](img/capturas/ss-m-404.png)
