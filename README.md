@@ -4,7 +4,7 @@
 - Valentina Flores
 
 ## Tema elegido
-El proyecto consiste en una aplicación web sobre **Elden Ring**, centrada en los encantamientos del videojuego. Permite consultar los distintos encantamientos disponibles, buscar por nombre, filtrarlos por categoría y acceder a una página de detalle con información de cada uno.
+El proyecto consiste en una aplicación web sobre **Elden Ring**, centrada en los encantamientos del videojuego. Permite consultar los distintos encantamientos disponibles, buscar por nombre, filtrarlos por categoría y acceder a una página de detalle con información de cada uno. Viene con una IA implementada, llamada Melina, la cual brinda imformación sobre estos encantamientos en cualquier contexto.
 
 ## API elegida
 Se utilizó la API **Elden Ring Fan API** para obtener información sobre los encantamientos.
@@ -19,6 +19,7 @@ Se utilizó la API **Elden Ring Fan API** para obtener información sobre los en
 - CSS3
 - Bootstrap 5
 - Firebase
+- IA (openrouter)
 
 ## Instalación y ejecución
 
@@ -73,17 +74,13 @@ VITE_FIREBASE_MESSAGING_SENDER_ID=423533641562
 VITE_FIREBASE_APP_ID=1:423533641562:web:e40f981cdb1d82c5027d63
 ```
 
-Importante: no subir el archivo .env al repositorio. Se debe incluir en .gitignore para evitar publicar información de configuración.
-
 ## URL pública de Firebase
 
 `https://sacredartsvue.web.app/`
 
 ## Inteligencia Artificial
 
-Opción de IA elegida:
-
-[Completar]
+Opción de IA elegida: `https://openrouter.ai/es/nvidia/nemotron-3-ultra-550b-a55b:free`
 
 ## Capturas de pantalla
 
