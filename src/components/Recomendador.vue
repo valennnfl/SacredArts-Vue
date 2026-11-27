@@ -259,7 +259,7 @@ ${JSON.stringify(props.encantamientos)}`
   align-self: start;
   height: 400px;
   min-width: 0;
-  background-image: url("/img/melina.png");
+  background-image: url("/img/melina.webp");
   background-position: center;
   background-size: cover;
 }

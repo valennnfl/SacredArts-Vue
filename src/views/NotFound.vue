@@ -7,7 +7,7 @@
       <RouterLink to="/" class="btn btn-primary btn-volver">Volver al inicio</RouterLink>
     </div>
     <div>
-      <img src="/img/404-img.png" alt="Giant Oracle Envoy">
+      <img src="/img/404-img.webp" alt="Giant Oracle Envoy">
     </div>
   </section>
 </template>

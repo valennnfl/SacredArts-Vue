@@ -86,16 +86,16 @@ Opción de IA elegida: `https://openrouter.ai/es/nvidia/nemotron-3-ultra-550b-a5
 
 ### Versión de escritorio
 
-![Captura del inicio](img/capturas/ss-inicio.png)
-![Captura de la IA](img/capturas/ss-ia.png)
-![Captura del detalle](img/capturas/ss-detalle.png)
-![Captura de guardados](img/capturas/ss-guardados.png)
-![Captura del 404](img/capturas/ss-404.png)
+![Captura del inicio](img/capturas/ss-inicio.webp)
+![Captura de la IA](img/capturas/ss-ia.webp)
+![Captura del detalle](img/capturas/ss-detalle.webp)
+![Captura de guardados](img/capturas/ss-guardados.webp)
+![Captura del 404](img/capturas/ss-404.webp)
 
 ### Versión móvil
 
-![Captura del inicio](img/capturas/ss-m-inicio.png)
-![Captura de la IA](img/capturas/ss-m-ia.png)
-![Captura del detalle](img/capturas/ss-m-detalle.png)
-![Captura de guardados](img/capturas/ss-m-guardados.png)
-![Captura del 404](img/capturas/ss-m-404.png)
+![Captura del inicio](img/capturas/ss-m-inicio.webp)
+![Captura de la IA](img/capturas/ss-m-ia.webp)
+![Captura del detalle](img/capturas/ss-m-detalle.webp)
+![Captura de guardados](img/capturas/ss-m-guardados.webp)
+![Captura del 404](img/capturas/ss-m-404.webp)
