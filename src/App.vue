@@ -11,10 +11,10 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <RouterLink class="nav-link active" aria-current="page" to="/">Inicio</RouterLink>
+                            <RouterLink class="nav-link" to="/" exact-active-class="active">Inicio</RouterLink>
                         </li>
                         <li class="nav-item">
-                            <RouterLink class="nav-link" to="/guardados">Guardados</RouterLink>
+                            <RouterLink class="nav-link" to="/guardados" exact-active-class="active">Guardados</RouterLink>
                         </li>
                     </ul>
                 </div>
@@ -31,8 +31,8 @@
             </div>
             <div class="footer-nav">
                 <h3>Navegación</h3>
-                <a href="#">Inicio</a>
-                <a href="guardados.html">Guardados</a>
+                <RouterLink to="/">Inicio</RouterLink>
+                <RouterLink to="/guardados">Guardados</RouterLink>
             </div>
         </div>
     </footer>

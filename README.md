@@ -1,44 +1,101 @@
-# sacredarts-api
+# Sacred Arts – Encantamientos de Elden Ring
 
-This template should help get you started developing with Vue 3 in Vite.
+## Integrante
+- Valentina Flores
 
-## Recommended IDE Setup
+## Tema elegido
+El proyecto consiste en una aplicación web sobre **Elden Ring**, centrada en los encantamientos del videojuego. Permite consultar los distintos encantamientos disponibles, buscar por nombre, filtrarlos por categoría y acceder a una página de detalle con información de cada uno.
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## API elegida
+Se utilizó la API **Elden Ring Fan API** para obtener información sobre los encantamientos.
 
-## Recommended Browser Setup
+- API: [Elden Ring Fan API](https://eldenring.fanapis.com/)
+- Endpoint utilizado: `https://eldenring.fanapis.com/api/incantations`
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+## Tecnologías utilizadas
+- Vue
+- JavaScript
+- HTML5
+- CSS3
+- Bootstrap 5
+- Firebase
 
-## Customize configuration
+## Instalación y ejecución
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+### Requisitos previos
+- Node.js (versión LTS)
+- pnpm
 
-## Project Setup
+### Pasos para instalar el proyecto
 
-```sh
-pnpm install
+1. Clonar el repositorio:
+
+   ```bash
+   git clone https://github.com/valennnfl/SacredArts-Vue.git
+   ```
+
+2. Ingresar a la carpeta del proyecto:
+
+   ```bash
+   cd sacredarts-vue
+   ```
+
+3. Instalar las dependencias:
+
+   ```bash
+   pnpm install
+   ```
+
+4. Configurar las variables de entorno (ver sección siguiente).
+
+5. Ejecutar el proyecto en modo desarrollo:
+
+   ```bash
+   pnpm run dev
+   ```
+
+6. Abrir en el navegador la dirección local que proporciona Vite, generalmente:
+
+   `http://localhost:5173/`
+
+## Variables de entorno
+
+Para configurar las variables de entorno, crear un archivo .env en la raíz del proyecto.
+
+Completar las variables necesarias según la configuración de Firebase:
+
+```
+VITE_FIREBASE_API_KEY=AIzaSyDiYxeupYViNc9HYMpE8avH0pWoPJ8U6Ec
+VITE_FIREBASE_AUTH_DOMAIN=sacredartsvue.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=sacredartsvue
+VITE_FIREBASE_STORAGE_BUCKET=sacredartsvue.firebasestorage.app
+VITE_FIREBASE_MESSAGING_SENDER_ID=423533641562
+VITE_FIREBASE_APP_ID=1:423533641562:web:e40f981cdb1d82c5027d63
 ```
 
-### Compile and Hot-Reload for Development
+Importante: no subir el archivo .env al repositorio. Se debe incluir en .gitignore para evitar publicar información de configuración.
 
-```sh
-pnpm dev
-```
+## URL pública de Firebase
 
-### Compile and Minify for Production
+`https://sacredartsvue.web.app/`
 
-```sh
-pnpm build
-```
+## Inteligencia Artificial
 
-### Lint with [ESLint](https://eslint.org/)
+Opción de IA elegida:
 
-```sh
-pnpm lint
-```
+[Completar]
+
+## Capturas de pantalla
+
+### Versión de escritorio
+
+![Captura del inicio](img/capturas/ss-inicio.png)
+![Captura del detalle](img/capturas/ss-detalle.png)
+![Captura de guardados](img/capturas/ss-guardados.png)
+![Captura del 404](img/capturas/ss-404.png)
+
+### Versión móvil
+
+![Captura del inicio](img/capturas/ss-m-inicio.png)
+![Captura del detalle](img/capturas/ss-m-detalle.png)
+![Captura de guardados](img/capturas/ss-m-guardados.png)

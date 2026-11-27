@@ -1,7 +1,7 @@
 <script setup>
 import { useRoute } from "vue-router"
-import { ref, watch } from "vue"
-import { computed } from "vue"
+import { ref, watch, computed } from "vue"
+import { useGuardados } from "@/components/useGuardados"
 
 const route = useRoute()
 const e = ref(null)
@@ -11,7 +11,7 @@ const requisitosActivos = computed(() => {
   if (!Array.isArray(e.value?.requires)) return []
   return e.value.requires.filter(r => r.amount > 0)
 })
-
+const { estaGuardado, alternar } = useGuardados()
 const nombresStats = {
   Intelligence: 'Inteligencia',
   Faith: 'Fe',
@@ -22,16 +22,27 @@ function traducirStat(nombre) {
 }
 
 async function cargarEncantamiento(id) {
-  window.scrollTo({ top: 0, behavior: 'instant' })
   cargando.value = true
   error.value = null
+  e.value = null
   try {
     const res = await fetch(`https://eldenring.fanapis.com/api/incantations/${id}`)
-    if (!res.ok) throw new Error("No se pudo cargar el encantamiento")
+    if (res.status === 404 || res.status === 400) {
+      error.value = "no-encontrado"
+      return
+    }
+    if (!res.ok) throw new Error(`Error ${res.status}`)
+
     const json = await res.json()
-    e.value = json.data ?? json
+    const dato = json.data ?? json
+    if (json.success === false || !dato || Array.isArray(dato) || !dato.id) {
+      error.value = "no-encontrado"
+      return
+    }
+    e.value = dato
   } catch (err) {
-    error.value = err.message
+    console.error(err)
+    error.value = "conexion"
   } finally {
     cargando.value = false
   }
@@ -42,10 +53,25 @@ watch(() => route.params.id, (nuevoId) => {
 }, { immediate: true })
 </script>
 
+
 <template>
   <section id="sec-detalle">
     <p v-if="cargando">Cargando encantamiento...</p>
-    <p v-else-if="error">{{ error }}</p>
+
+    <div v-else-if="error === 'no-encontrado'" class="container-sm text-center py-5">
+      <h2 class="h-404">404</h2>
+      <p>No existe un encantamiento con el id "{{ route.params.id }}".</p>
+      <RouterLink to="/" class="btn btn-primary btn-volver">Volver al inicio</RouterLink>
+    </div>
+
+    <div v-else-if="error === 'conexion'" class="container-sm text-center py-5">
+      <h2>No pudimos cargar el encantamiento</h2>
+      <p>Revisá tu conexión o probá de nuevo en unos segundos.</p>
+      <button class="btn btn-secondary" @click="cargarEncantamiento(route.params.id)">
+        Reintentar
+      </button>
+    </div>
+
     <div class="detalle container-sm" v-else-if="e">
       <picture>
         <img :src="e.image" :alt="e.name">
@@ -77,6 +103,13 @@ watch(() => route.params.id, (nuevoId) => {
           </span>
         </li>
       </ul>
+      <button
+        class="btn"
+        :class="estaGuardado(e.id) ? 'btn-quitar' : 'btn-primary'"
+        @click="alternar(e)"
+      >
+        {{ estaGuardado(e.id) ? "Quitar de guardados" : "Guardar" }}
+      </button>
 
       </div>
     </div>

@@ -114,7 +114,7 @@ nav h1 {
     position: relative;
     width: 300px;
     height: 75px;
-    background-image: url(./img/sacred-arts.png);
+    background-image: url(/img/sacred-arts.png);
     background-repeat: no-repeat;
     background-size: 95%;
     background-position: center;
@@ -158,7 +158,7 @@ nav .btn-primary{
     rgba(0, 0, 0, 0) 50%,
     rgba(0, 0, 0, 0.8) 100%
     ),
-    url('./img/eldenring-bg.webp');
+    url('/img/eldenring-bg.webp');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -171,8 +171,26 @@ nav .btn-primary{
     max-width: 900px;
 }
 
+/*busqueda*/
+#search-section{
+  margin: 2em 0 0 0!important;
+}
+.form-control, .form-control:focus, .form-select, .form-select:focus{
+  background-color: #0F1011;
+  color: white;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+.form-control{
+  background-color: #0f101177;
+}
+.form-control::placeholder{
+  color: var(--texto);
+}
+
 /* encantamientos */
-#sec-encan, #sec-detalle{
+#sec-encan, #sec-detalle, #sec-guar{
     position: relative;
     overflow: hidden;
     padding-bottom: 6em;
@@ -182,14 +200,14 @@ nav .btn-primary{
     position: relative;
     z-index: 1;
 }
-#encantamientos{
-    margin-top: 4em;
+#encantamientos, #e-guardados{
+    margin-top: 1em;
     justify-content: center;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 0.5em;
 }
-#encantamientos article{
+#encantamientos article, #e-guardados article{
     background-color: #000000;
     color: #FFFFFF;
     display: flex;
@@ -198,11 +216,11 @@ nav .btn-primary{
     border-color: var(--dorado);
     border-radius: 0;
 }
-#encantamientos article img:hover{
+#encantamientos article img:hover, #e-guardados article img:hover{
   transition: 0.3s;
   opacity: 70%;
 }
-#encantamientos article .card-body{
+#encantamientos article .card-body, #e-guardados article .card-body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -210,18 +228,36 @@ nav .btn-primary{
     gap: 0.2em;
     padding: 0;
 }
-#encantamientos article .btn{
+#encantamientos article .btn, #e-guardados article .btn, .btn-primary{
     background-color: var(--dorado);
     color: #332200;
     border: none;
     border-radius: 0;
     transition: 0.2s;
     padding: 0;
+    padding-top: 0.2em;
 }
-#encantamientos article .btn:hover{
+#encantamientos article .btn:hover, #e-guardados article .btn:hover, .btn-primary:hover{
     background-color: #9f7b33;
 }
-
+#encantamientos article h5, #e-guardados article h5{
+  padding: 0 0.5em;
+}
+.btn-quitar {
+  background-color: #8b1e1e!important;
+  border: none!important;
+  color: #fff!important;
+}
+.btn-quitar:hover {
+  background-color: #a62626!important;
+  border: none!important;
+  color: #fff!important;
+}
+.btn-guardado{
+  background-color: #906d25!important;
+  border: none!important;
+  color: #080400!important;
+}
 
 /* paginación */
 
@@ -264,8 +300,6 @@ nav .btn-primary{
 
   position: relative;
   min-height: 100vh;
-  padding: 2.5rem 1.5rem;
-  border-radius: 12px;
 
   background-image:
     linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.679)),
@@ -295,10 +329,10 @@ nav .btn-primary{
 }
 .detalle img{
   width: 100%;
+  max-width: 500px;
 }
 
 .elden-stats {
-  max-width: 420px;
   margin: 1rem 0 0;
   padding: 0;
   li {
@@ -322,6 +356,69 @@ nav .btn-primary{
   .stat-zero {
     opacity: 0.55;
   }
+}
+
+.btn-primary{
+  width: 100%;
+  margin-top: 1em;
+}
+#sec-detalle .btn-quitar{
+  width: 100%;
+  margin-top: 1em;
+  border: none;
+  border-radius: 0;
+  transition: 0.2s;
+  padding: 0;
+  padding-top: 0.2em;
+}
+
+/*guardados*/
+#sec-guar{
+  margin: 8em 0 4em 0;
+  min-height: 100vh;
+
+  background-image:
+    linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url('../img/guar-bg.webp');
+  background-size: contain;
+  background-position: top right;
+  background-repeat: no-repeat;
+}
+#e-guardados{
+  margin: 0 auto;
+}
+.lista-enter-active,
+.lista-leave-active {
+  transition: all 0.3s ease;
+}
+.lista-enter-from,
+.lista-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+/* 404 */
+#sec-404 {
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 0 !important;
+
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-content: center;
+  gap: 5em;
+}
+#sec-404 img {
+  max-width: 300px;
+  height: 400px;
+}
+.h-404{
+  font-size: 10em;
+  margin: 0;
+}
+.btn-volver{
+  max-width: 300px;
 }
 
 /* footer */
@@ -371,7 +468,7 @@ footer .footer-nav{
     .img-eldenring, .img-bloodborne, .img-ds, .img-ds3{
         object-position: center;
     }
-    #encantamientos{
+    #encantamientos, #e-guardados{
         grid-template-columns: repeat(4, 1fr);
     }
 }
@@ -384,8 +481,21 @@ footer .footer-nav{
         font-size: 0.9em;
     }
 
-    #encantamientos{
+    #encantamientos, #e-guardados{
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .detalle{
+      display: flex;
+      flex-direction: column;
+      padding: 0 1em;
+      max-width: 600px;
+    }
+    .detalle img{
+      margin: 0 auto;
+    }
+    .elden-stats{
+      max-width: 1000px;
     }
 }
 
@@ -394,7 +504,7 @@ footer .footer-nav{
         width: 160px!important;
     }
     h2{
-        font-size: 1.7em!important;
+        font-size: 2.7em!important;
     }
     h3{
         font-size: 1.4em!important;
@@ -407,15 +517,27 @@ footer .footer-nav{
         font-size: 1em!important;
     }
 
-    #encantamientos{
+    #encantamientos, #e-guardados{
         grid-template-columns: repeat(2, 1fr);
     }
-    #encantamientos article{
+    #encantamientos article, #e-guardados article{
         padding: 0;
     }
-    #encantamientos article h5{
+    #encantamientos article h5, #e-guardados article h5{
         font-size: 1em;
     }
+
+    #sec-404 {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 0;
+      margin-bottom: 4em;
+    }
+    #sec-404 h2{
+      font-size: 7em!important;
+    }
+
 
     /* footer */
     footer p, footer a{
