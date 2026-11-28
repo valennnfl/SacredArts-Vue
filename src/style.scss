@@ -241,6 +241,7 @@ nav .btn-primary{
     padding: 0;
     border-color: var(--dorado);
     border-radius: 0;
+    margin: 0;
 }
 #encantamientos article img, #e-guardados article img{
   transform: scale(0.95);
@@ -271,7 +272,7 @@ nav .btn-primary{
 }
 #encantamientos article h5, #e-guardados article h5{
   padding: 0 0.5em;
-  margin: 0.5em 0 0 0;
+  margin: 0.5em 0 0.5em 0;
 }
 .btn-quitar {
   background-color: #3c2a0e!important;

@@ -197,14 +197,6 @@ onMounted(cargar)
 
           <div class="card-body">
             <h5 class="card-title">{{ e.name }}</h5>
-
-            <button
-              class="btn"
-              :class="estaGuardado(e.id) ? 'btn-quitar' : 'btn-primary'"
-              @click.stop="alternar(e)"
-            >
-              {{ estaGuardado(e.id) ? "Guardado" : "Guardar" }}
-            </button>
           </div>
         </article>
 

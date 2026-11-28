@@ -307,6 +307,7 @@ ${JSON.stringify(props.encantamientos)}`
   color: #fff;
   font-size: clamp(1.5rem, 4vw, 2rem) !important;
   text-align: left !important;
+  justify-self: left!important;
 }
 
 .recomendador-descripcion {
